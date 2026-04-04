@@ -41,6 +41,7 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['exec-and-forget sketchybar --reload']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -153,7 +154,6 @@ on-mode-changed = []
     alt-c = 'workspace C'
     alt-d = 'workspace D'
     alt-e = 'workspace E'
-    alt-f = 'workspace F'
     alt-g = 'workspace G'
     alt-i = 'workspace I'
     alt-m = 'workspace M'
@@ -212,6 +212,10 @@ on-mode-changed = []
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     alt-shift-semicolon = 'mode service'
 
+    # app shortcuts
+    alt-f = 'exec-and-forget open -a finder.app'
+    alt-l = 'exec-and-forget /Users/chris/.local/bin/launcher.sh'
+
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
@@ -223,15 +227,20 @@ on-mode-changed = []
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
 
-    alt-shift-h = ['join-with left', 'mode main']
-    alt-shift-j = ['join-with down', 'mode main']
-    alt-shift-k = ['join-with up', 'mode main']
-    alt-shift-l = ['join-with right', 'mode main']
+    alt-shift-left = ['join-with left', 'mode main']
+    alt-shift-down = ['join-with down', 'mode main']
+    alt-shift-up = ['join-with up', 'mode main']
+    alt-shift-right = ['join-with right', 'mode main']
 
-[[on-window-detected]]
-    check-further-callbacks = true
-    run = 'exec-and-forget sketchybar --reload'
+
+#[[on-window-detected]]
+#    check-further-callbacks = true
+#    run = 'exec-and-forget sketchybar --reload'
 
 [[on-window-detected]]
     if.app-id = 'com.apple.finder'
-    run = ['layout floating', 'move-node-to-workspace 9']
+    run = ['layout floating']
+
+[[on-window-detected]]
+    if.app-id = 'com.apple.Preview'
+    run = ['layout floating']
