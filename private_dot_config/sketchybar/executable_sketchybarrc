@@ -12,8 +12,9 @@ ITEM_DIR="$CONFIG_DIR/items"
 # https://felixkratz.github.io/SketchyBar/config/bar
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
+# 0x343d46e4
 
-sketchybar --bar display=all position=top height=30 radius=30 blur_radius=30 color=0x40000000
+sketchybar --bar display=all position=top height=30 radius=30 blur_radius=30 color=0x343d46e4
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -23,8 +24,8 @@ sketchybar --bar display=all position=top height=30 radius=30 blur_radius=30 col
 default=(
   padding_left=5
   padding_right=5
-  icon.font="Hack Nerd Font:Bold:10.0"
-  label.font="Hack Nerd Font:Bold:10.0"
+  icon.font="Hack Nerd Font:Bold:11.0"
+  label.font="Hack Nerd Font:Bold:14.0"
   icon.color=0xffffffff
   label.color=0xffffffff
   icon.padding_left=4
@@ -138,8 +139,8 @@ done
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-#sketchybar --add item clock right \
-#           --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh" \
+sketchybar --add item clock right \
+          --set clock update_freq=10 icon=  script="$PLUGIN_DIR/clock.sh"
 #           --add item volume right \
 #           --set volume script="$PLUGIN_DIR/volume.sh" \
 #           --subscribe volume volume_change \
