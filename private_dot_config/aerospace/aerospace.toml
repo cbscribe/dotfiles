@@ -248,6 +248,6 @@ on-mode-changed = []
     if.app-id = 'org.godotengine.godot'
     run = ['layout floating']
 
-[[on-window-detected]]
-    if.app-id = 'com.hnc.Discord'
-    run = ['layout floating']
+# [[on-window-detected]]
+#     if.app-id = 'com.hnc.Discord'
+#     run = ['layout floating']
