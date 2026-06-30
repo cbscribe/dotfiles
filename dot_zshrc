@@ -108,7 +108,7 @@ bindkey "^[OB" down-line-or-beginning-search # Down
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="eza --icons"
+alias ls="eza --icons=always"
 alias brewr="arch -x86_64 /usr/local/bin/brew $@"
 alias leg="arch -x86_64 $@"
 alias blender="/Applications/Blender.app/Contents/MacOS/Blender"
